@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Course, Student
 from django.http import HttpResponse
 from .form import CourseForm, StudentForm
@@ -37,7 +37,7 @@ def student_add(request):
         form = StudentForm(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse('Success')
+            return redirect('student_list')
         else:
             return HttpResponse('Error')
     if request.method == 'GET':
