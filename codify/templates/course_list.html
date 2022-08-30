@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+{% block content%}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Mentor</th>
+      <th scope="col">Language</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for course in courses %}
+    <tr>
+      <th scope="row">1</th>
+      <td>{{ course.name }}</td>
+      <td>{{ course.mentor_name }}</td>
+      <td>{{ course.language }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+{% endblock content%}
